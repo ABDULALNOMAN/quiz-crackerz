@@ -1,7 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 const Card = ({ item }) => {
-    const {logo,name,total}=item
+    const {id, logo, name, total } = item
+    const navigate = useNavigate()
+    const handleClick = (id) => {
+        navigate(`/home/${id}`)
+    }
     return (
         <div className='flex flex-col '>
             <div className=" w-full bg-cyan-800 shadow-xl p-4 rounded-t-md">
@@ -12,7 +18,7 @@ const Card = ({ item }) => {
                 </div>
             </div>
             <div>
-                <button className=' font-bold capitalize text-orange-400 bg-green-800 w-full py-1'>click</button>
+                <button onClick={()=>handleClick(id)} className=' font-bold capitalize text-orange-400 bg-green-800 w-full py-1'>click</button>
             </div>
         </div>
     );
