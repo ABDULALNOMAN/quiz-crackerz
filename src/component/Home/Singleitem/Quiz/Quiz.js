@@ -8,7 +8,6 @@ import 'react-toastify/dist/ReactToastify.css';
 export const CallContext = createContext()
 const Quiz = ({ data }) => {
     const { correctAnswer, question, options } = data
-    console.log(data)
     const handleCheck = (option) => {
         const item = correctAnswer === option;
         console.log(item)
