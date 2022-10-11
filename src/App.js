@@ -4,6 +4,7 @@ import Blog from './component/Blog/Blog';
 import Home from './component/Home/Home';
 import Singleitem from './component/Home/Singleitem/Singleitem';
 import Nav from './component/Layout/Nav/Nav';
+import Notexist from './component/Notexist/Notexist';
 import Status from './component/Status/Status';
 
 function App() {
@@ -15,13 +16,13 @@ function App() {
         {
           path: "/",
           element: <Home></Home>,
-          loader:()=>fetch("https://openapi.programming-hero.com/api/quiz")
+          loader: () => fetch("https://openapi.programming-hero.com/api/quiz")
         },
         {
-          path:'/home/:id',
+          path: '/home/:id',
           element: <Singleitem></Singleitem>,
           loader: ({ params }) => {
-            const {id}=params
+            const { id } = params
             return fetch(`https://openapi.programming-hero.com/api/quiz/${id}`)
           }
         },
@@ -31,9 +32,13 @@ function App() {
         },
         {
           path: "/blog",
-          element:<Blog></Blog>
-        }
+          element: <Blog></Blog>
+        },
       ])
+    },
+    {
+        path: '*',
+        element:<Notexist></Notexist>
     }
   ])
   return (
