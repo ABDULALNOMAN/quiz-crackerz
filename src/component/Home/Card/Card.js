@@ -18,7 +18,7 @@ const Card = ({ item }) => {
                 </div>
             </div>
             <div>
-                <button onClick={()=>handleClick(id)} className=' font-bold capitalize text-orange-400 bg-green-800 w-full py-1'>click</button>
+                <button onClick={()=>handleClick(id)} className=' font-bold capitalize text-orange-400 bg-green-800 w-full py-1 hover:bg-green-900'>click</button>
             </div>
         </div>
     );

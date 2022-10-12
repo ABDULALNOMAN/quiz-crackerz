@@ -7,7 +7,11 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const CallContext = createContext()
 const Quiz = ({ data }) => {
-    const { correctAnswer, question, options } = data
+    let { correctAnswer, question, options } = data
+    console.log(question)
+    const ques = question.toString();
+    const questionReplace = ques.replace( /(<([^>]+)>)/ig, '')
+    console.log(ques)
     const handleCheck = (option) => {
         const item = correctAnswer === option;
         console.log(item)
@@ -24,7 +28,7 @@ const Quiz = ({ data }) => {
     return (
         <CallContext.Provider value={handleCheck}>
             <div className='text-center mt-10 p-6 rounded-3xl shadow-md shadow-cyan-600 relative' data-theme={'night'}>
-                <h1 className='text-2xl mt-4'>{question}</h1>
+                <h1 className='text-2xl mt-4'>{questionReplace}</h1>
                 <div className='absolute top-2 right-2'>
                     <EyeIcon onClick={handleTrue} className='h-6 w-6'></EyeIcon>
                     <ToastContainer></ToastContainer>
