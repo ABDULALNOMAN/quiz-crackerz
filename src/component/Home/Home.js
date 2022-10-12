@@ -8,10 +8,10 @@ const Home = () => {
     const quizData = useLoaderData()
     const { data } = quizData
     return (
-        <div className='bg-sky-300 w-full h-screen'>
+        <div className='bg-sky-300 w-full h-full pb-10'>
             <div className='container mx-auto'>
                  <h1 className='text-6xl text-center font-bold capitalize text-sky-800 pt-10'>Test your <span className='italic text-cyan-600'>knowledge</span></h1>
-                <div className='grid grid-cols-4 gap-4 mt-10'>
+                <div className='grid lg:grid-cols-4 md:grid-cols-2 lg:gap-4 lg:mx-0 mx-20 gap-6  mt-10'>
                     {
                         data.map(item=><Card key={item.id} item={item}></Card>)
                     }

@@ -9,9 +9,9 @@ const Card = ({ item }) => {
         navigate(`/home/${id}`)
     }
     return (
-        <div className='flex flex-col '>
+        <div className='flex flex-col'>
             <div className=" w-full bg-cyan-800 shadow-xl p-4 rounded-t-md">
-                <figure><img className='' src={logo} alt="Shoes" /></figure>
+                <figure><img className='w-full' src={logo} alt="Shoes" /></figure>
                 <div className=" flex flex-row justify-between my-5 text-white">
                     <h2 className="text-2xl font-bold ">{name}</h2>
                     <p>total: {total}</p>

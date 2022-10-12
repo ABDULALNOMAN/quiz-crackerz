@@ -5,6 +5,7 @@ import Home from './component/Home/Home';
 import Singleitem from './component/Home/Singleitem/Singleitem';
 import Nav from './component/Layout/Nav/Nav';
 import Notexist from './component/Notexist/Notexist';
+import Chart from './component/Status/Chart/Chart';
 import Status from './component/Status/Status';
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
         },
         {
           path: "/status",
-          element: <Status></Status>
+          element:<Status></Status>,
+          loader:()=>fetch('https://openapi.programming-hero.com/api/quiz')
         },
         {
           path: "/blog",
