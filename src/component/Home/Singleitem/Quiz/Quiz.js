@@ -8,13 +8,10 @@ import 'react-toastify/dist/ReactToastify.css';
 export const CallContext = createContext()
 const Quiz = ({ data }) => {
     let { correctAnswer, question, options } = data
-    console.log(question)
     const ques = question.toString();
     const questionReplace = ques.replace( /(<([^>]+)>)/ig, '')
-    console.log(ques)
     const handleCheck = (option) => {
         const item = correctAnswer === option;
-        console.log(item)
         if (item) {
             toast('true')
         }
@@ -35,7 +32,7 @@ const Quiz = ({ data }) => {
                 </div>
                 <div className='grid grid-cols-2 gap-3 mt-10'>
                     {
-                        options.map(option => <Quizvalue option={option}></Quizvalue>)
+                        options.map((option, idx) => <Quizvalue key={idx} option={option}></Quizvalue>)
                     }
                 </div>
             </div>
